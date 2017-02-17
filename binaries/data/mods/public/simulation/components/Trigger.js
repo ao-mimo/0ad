@@ -66,7 +66,7 @@ Trigger.prototype.GetTriggerPoints = function(ref)
 /**
  * Binds a function to the specified event.
  *
- * @param {string} event - One of eventNames
+ * @param {string} event - One of eventNames prefixed with On
  * @param {string} action - Name of a function available to this object
  * @param {Object} data - f.e. enabled or not, delay for timers, range for range triggers
  *

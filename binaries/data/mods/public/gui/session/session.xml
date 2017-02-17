@@ -91,6 +91,7 @@
 	<include file="gui/session/trade_window.xml"/>
 	<include file="gui/session/top_panel.xml"/>
 	<include file="gui/session/menu.xml"/>
+	<include file="gui/session/tutorial_panel.xml"/>
 
 	<!-- Contains miscellanious objects s.a.: the technology research -->
 	<!-- progress, group selection icons, and the hero selection icon -->

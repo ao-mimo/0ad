@@ -324,6 +324,9 @@ function init(initData, hotloadData)
 	// and it generates a massive amount of data to transmit and store
 	//setTimeout(function() { reportPerformance(5); }, 5000);
 	//setTimeout(function() { reportPerformance(60); }, 60000);
+
+	Engine.GetGUIObjectByName("tutorialPanel").hidden = !g_GameAttributes.settings.Keywords ||
+		g_GameAttributes.settings.Keywords.indexOf("tutorial") == -1;
 }
 
 /**

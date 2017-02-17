@@ -48,10 +48,8 @@
   ],
   "CircularMap": true,
   "Description": "This map will give a rough guide for starting the game effectively.  Early in the game the most important thing is to gather resources as fast as possible so you are able to build enough troops later.\u000a\u000aWarning: This is very fast at the start, be prepared to run through the initial bit several times.",
-  "GameType": "conquest",
-  "Keywords": [
-    "demo"
-  ],
+  "GameType": "endless",
+  "Keywords": ["demo", "tutorial", "trigger"],
   "LockTeams": false,
   "Name": "Starting Economy Walkthrough",
   "PlayerData": [
@@ -67,7 +65,7 @@
       "Team": -1
     },
     {
-      "AI": "tutorial-ai",
+      "AI": "",
       "Civ": "cart",
       "Color": {
         "b": 20,
@@ -81,6 +79,11 @@
   "Preview": "persian_highlands.png",
   "RevealMap": false,
   "Script": "persian_highlands.js",
+  "TriggerScripts": [
+    "scripts/TriggerHelper.js",
+    "scripts/Tutorial.js",
+    "scenarios/starting_economy_walkthrough.js"
+  ],
   "Size": 256
 }
 ]]></ScriptSettings>
@@ -553,12 +556,6 @@
 			<Player>0</Player>
 			<Position x="625.0747" z="826.88733"/>
 			<Orientation y="-0.62328"/>
-		</Entity>
-		<Entity uid="266">
-			<Template>gaia/fauna_chicken</Template>
-			<Player>0</Player>
-			<Position x="628.75426" z="833.4887"/>
-			<Orientation y="-3.87443"/>
 		</Entity>
 		<Entity uid="267">
 			<Template>gaia/flora_bush_grapes</Template>

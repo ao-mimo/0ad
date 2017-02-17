@@ -333,6 +333,10 @@ var g_NotificationsTypes =
 
 		updateDiplomacy();
 	},
+	"tutorial": function(notification, player)
+	{
+		updateTutorial(notification);
+	},
 	"tribute": function(notification, player)
 	{
 		addChatMessage({
@@ -518,6 +522,41 @@ function updateDiplomacy()
 
 	if (g_IsDiplomacyOpen)
 		openDiplomacy();
+}
+
+/**
+ * Updates playerdata cache and refresh diplomacy panel.
+ */
+function updateTutorial(notification)
+{
+	if (notification.warning)
+	{
+		Engine.GetGUIObjectByName("tutorialWarning").caption = "[color=\"orange\"]" + notification.message + "[/color]";
+		return;
+	}
+
+	let tutorialText = Engine.GetGUIObjectByName("tutorialText");
+	let caption = tutorialText.caption.replace('[color=\"yellow\"]', '').replace('[/color]', '');
+	if (caption)
+		caption += "\n";
+	tutorialText.caption = caption + "[color=\"yellow\"]" + notification.message + "[/color]";
+	if (notification.readyButton)
+	{
+		Engine.GetGUIObjectByName("tutorialReady").hidden = false;
+		if (notification.leave)
+		{
+			Engine.GetGUIObjectByName("tutorialWarning").caption = markForTranslation("Click to quit this tutorial.");
+			Engine.GetGUIObjectByName("tutorialReady").caption = markForTranslation("Quit");
+			Engine.GetGUIObjectByName("tutorialReady").onPress = function() { leaveGame(); };
+		}
+		else
+			Engine.GetGUIObjectByName("tutorialWarning").caption = markForTranslation("Click when ready.");
+	}
+	else
+	{
+		Engine.GetGUIObjectByName("tutorialWarning").caption = markForTranslation("Follow the instructions.");
+		Engine.GetGUIObjectByName("tutorialReady").hidden = true;
+	}
 }
 
 /**
