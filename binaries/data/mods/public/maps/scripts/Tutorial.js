@@ -13,7 +13,6 @@ Trigger.prototype.RegisterNeededTriggers = function()
 	this.events.push("OnPlayerCommand");
 
 	for (let goal of this.goals)
-	{
 		for (let key in goal)
 		{
 			if (typeof goal[key] !== "function" || this.events.indexOf(key) != -1)
@@ -22,7 +21,6 @@ Trigger.prototype.RegisterNeededTriggers = function()
 			this.RegisterTrigger(key, action, { "enabled": false });
 			this.events.push(key);
 		}
-	}
 };
 
 Trigger.prototype.NextGoal = function()

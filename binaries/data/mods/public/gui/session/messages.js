@@ -545,16 +545,16 @@ function updateTutorial(notification)
 		Engine.GetGUIObjectByName("tutorialReady").hidden = false;
 		if (notification.leave)
 		{
-			Engine.GetGUIObjectByName("tutorialWarning").caption = markForTranslation("Click to quit this tutorial.");
-			Engine.GetGUIObjectByName("tutorialReady").caption = markForTranslation("Quit");
-			Engine.GetGUIObjectByName("tutorialReady").onPress = function() { leaveGame(); };
+			Engine.GetGUIObjectByName("tutorialWarning").caption = translate("Click to quit this tutorial.");
+			Engine.GetGUIObjectByName("tutorialReady").caption = translate("Quit");
+			Engine.GetGUIObjectByName("tutorialReady").onPress = leaveGame();
 		}
 		else
-			Engine.GetGUIObjectByName("tutorialWarning").caption = markForTranslation("Click when ready.");
+			Engine.GetGUIObjectByName("tutorialWarning").caption = translate("Click when ready.");
 	}
 	else
 	{
-		Engine.GetGUIObjectByName("tutorialWarning").caption = markForTranslation("Follow the instructions.");
+		Engine.GetGUIObjectByName("tutorialWarning").caption = translate("Follow the instructions.");
 		Engine.GetGUIObjectByName("tutorialReady").hidden = true;
 	}
 }
